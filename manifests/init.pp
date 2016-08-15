@@ -32,9 +32,9 @@
 #   Specify the client password
 #   Default value is client-password-for-bacula
 #
-# * `console_password`
-#   Specify the console password
-#   Default value is console-password-for-bacula
+# * `director_password`
+#   Specify the director password - this pw will be used in director and bconsole config.
+#   Default value is director-password-for-bacula
 #
 # * `monitor_password`
 #   Specify the monitor password
