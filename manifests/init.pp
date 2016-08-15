@@ -32,6 +32,10 @@
 #   Specify the client password
 #   Default value is client-password-for-bacula
 #
+# * `console_password`
+#   Specify the console password
+#   Default value is console-password-for-bacula
+#
 # * `monitor_password`
 #   Specify the monitor password
 #   Default value is monitor-password-for-bacula
@@ -70,6 +74,7 @@
 #      type_sd => true,
 #      type_dir => true,
 #      client_password => 'Start123!',
+#      console_password => 'Start123!',
 #      monitor_password => 'Start123!',
 #      storage_password => 'Start123!',
 #      storage_daemon => 'bac-sd.example.local',
@@ -95,6 +100,7 @@ class bacula (
   $db_password              = $bacula::params::db_password,
   $db_password_hash         = $bacula::params::db_password_hash,
   $client_password          = $bacula::params::client_password,
+  $console_password          = $bacula::params::console_password,
   $monitor_password         = $bacula::params::monitor_password,
   $storage_password         = $bacula::params::storage_password,
   $storage_daemon           = $bacula::params::storage_daemon,
