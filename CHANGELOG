@@ -1,0 +1,15 @@
+0.2.3 2016-08-11 thbe <project@bendler-net.de>
+ * Fix wrong package requirement in bacula::config::client
+
+0.2.2 2016-08-11 thbe <project@bendler-net.de>
+ * Fix wrong package requirement in bacula::config::mysql
+
+0.2.1 2016-01-19 thbe <project@bendler-net.de>
+ * Exclude specific lint check
+
+0.2.0 2016-01-19 thbe <project@bendler-net.de>
+ * Fixed typos
+ * Enhance documentation
+
+0.1.0 2016-01-15 thbe <project@bendler-net.de>
+ * Initial release
