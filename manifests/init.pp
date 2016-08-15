@@ -100,7 +100,7 @@ class bacula (
   $db_password              = $bacula::params::db_password,
   $db_password_hash         = $bacula::params::db_password_hash,
   $client_password          = $bacula::params::client_password,
-  $console_password          = $bacula::params::console_password,
+  $director_password          = $bacula::params::director_password,
   $monitor_password         = $bacula::params::monitor_password,
   $storage_password         = $bacula::params::storage_password,
   $storage_daemon           = $bacula::params::storage_daemon,

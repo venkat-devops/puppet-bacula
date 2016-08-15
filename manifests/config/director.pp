@@ -36,6 +36,13 @@ class bacula::config::director {
       notify  => Service[$bacula::params::service_director],
       require => Package[$bacula::params::package_director_common];
 
+      $bacula::params::config_bconsole:
+        ensure  => file,
+        mode    => '0644',
+        content => template($bacula::params::config_bconsole_template),
+        notify  => Service[$bacula::params::service_director],
+        require => Package[$bacula::params::package_director_common];
+
     $bacula::params::config_confd_catalog:
       ensure  => file,
       mode    => '0644',
@@ -130,4 +137,13 @@ class bacula::config::director {
 
   # Create client configuration
   bacula::config::client { $bacula::backup_clients : }
+
+  # Set Bacula to Use MySQL Library - By default, Bacula is set to use the PostgreSQL library.
+  exec { 'Set Bacula to Use MySQL Library':
+  path    => ['/usr/bin', '/usr/sbin', '/bin'],
+  unless  => '/usr/sbin/dbcheck -B -c /etc/bacula/bacula-dir.conf | grep "db_type=MySQL"',
+  command => 'echo 1 | /sbin/alternatives --config libbaccats.so',
+  notify  => Service[$bacula::params::service_director],
+  timeout => 1800,
+  }
 }

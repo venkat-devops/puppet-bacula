@@ -8,6 +8,6 @@
 ### Restricted console used by tray-monitor to get the status of the director ###
 Console {
   Name = BackupServerMonitor
-  Password = <%= scope.lookupvar('bacula::console_password') %>
+  Password = <%= scope.lookupvar('bacula::monitor_password') %>
   CommandACL = status, .status
 }
