@@ -32,6 +32,10 @@
 #   Specify the client password
 #   Default value is client-password-for-bacula
 #
+# * `director_name`
+#   Specify the director name - this name will be used in director, storage, client and bconsole config.
+#   Default value is BackupServerDirector
+#
 # * `director_password`
 #   Specify the director password - this pw will be used in director and bconsole config.
 #   Default value is director-password-for-bacula
@@ -100,7 +104,8 @@ class bacula (
   $db_password              = $bacula::params::db_password,
   $db_password_hash         = $bacula::params::db_password_hash,
   $client_password          = $bacula::params::client_password,
-  $director_password          = $bacula::params::director_password,
+  $director_name            = $bacula::params::director_name,
+  $director_password        = $bacula::params::director_password,
   $monitor_password         = $bacula::params::monitor_password,
   $storage_password         = $bacula::params::storage_password,
   $storage_daemon           = $bacula::params::storage_daemon,

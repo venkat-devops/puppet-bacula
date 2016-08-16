@@ -6,7 +6,7 @@
 #
 
 Director {
-  Name = BackupServerDirector
+  Name = <%= scope.lookupvar('bacula::director_name') %>
   DIRport = 9101
   address = <%= @fqdn %>
   Password = <%= scope.lookupvar('bacula::director_password') %>

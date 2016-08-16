@@ -7,7 +7,7 @@
 
 ### Director definition ###
 Director {
-  Name = BackupServerDirector
+  Name = <%= scope.lookupvar('bacula::director_name') %>
   DIRport = 9101
   QueryFile = "/usr/libexec/bacula/query.sql"
   WorkingDirectory = "/var/spool/bacula"

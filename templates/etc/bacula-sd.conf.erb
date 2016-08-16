@@ -19,7 +19,7 @@ Storage {
 # List Directors who are permitted to contact Storage daemon
 #
 Director {
-  Name = BackupServerDirector
+  Name = <%= scope.lookupvar('bacula::director_name') %>
   Password = <%= scope.lookupvar('bacula::storage_password') %>
 }
 
@@ -51,5 +51,5 @@ Device {
 # mount messages also are sent to the email address
 Messages {
   Name = Standard
-  director = BackupServerDirector = all
+  director = <%= scope.lookupvar('bacula::director_name') %> = all
 }
