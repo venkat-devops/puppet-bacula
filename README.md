@@ -53,14 +53,15 @@ This module can install the:
 
 ```puppet
 class { 'bacula':
-  type_dir => true,
-  client_password => 'Start123!',
+  type_dir         => true,
+  director_name    => 'BackupServerDirector',
+  client_password  => 'Start123!',
   monitor_password => 'Start123!',
   storage_password => 'Start123!',
-  storage_daemon => 'bac-sd.example.local',
-  mail_hub => 'mail.example.local',
-  mail_group => 'bac-group@example.local',
-  backup_clients => [ 'client1.example.local', 'client2.example.local' ]
+  storage_daemon   => 'bac-sd.example.local',
+  mail_hub         => 'mail.example.local',
+  mail_group       => 'bac-group@example.local',
+  backup_clients   => [ 'client1.example.local', 'client2.example.local' ]
 }
 ```
 
@@ -68,10 +69,11 @@ class { 'bacula':
 
 ```puppet
 class { 'bacula':
-  type_sd => true,
+  type_sd          => true,
+  director_name    => 'BackupServerDirector',
   monitor_password => 'Start123!',
   storage_password => 'Start123!',
-  storage_daemon => 'bac-sd.example.local'
+  storage_daemon   => 'bac-sd.example.local'
 }
 ```
 
@@ -79,8 +81,9 @@ class { 'bacula':
 
 ```puppet
 class { 'bacula':
-  type_fd => true,
-  client_password => 'Start123!',
+  type_fd          => true,
+  director_name    => 'BackupServerDirector',
+  client_password  => 'Start123!',
   monitor_password => 'Start123!'
 }
 ```
@@ -103,6 +106,11 @@ Default value is false
 
 Specify if director components should be installed
 Default value is false
+
+#### `$director_name`
+
+Specify the director name
+Default value is BackupServerDirector
 
 #### `$db_password`
 
