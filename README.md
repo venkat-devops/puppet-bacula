@@ -94,72 +94,72 @@ Here is the list of parameters used by this module.
 
 #### `$type_fd`
 
-Specify if file descriptor components should be installed.
+Specify if file descriptor components should be installed.<br>
 Default value is false
 
 #### `$type_sd`
 
-Specify if storage daemon components should be installed.
+Specify if storage daemon components should be installed.<br>
 Default value is false
 
 #### `$type_dir`
 
-Specify if director components should be installed.
+Specify if director components should be installed.<br>
 Default value is false
 
 #### `$director_name`
 
-Specify the director name.
+Specify the director name.<br>
 Default value is BackupServerDirector
 
 #### `$db_password`
 
-Specify the database password.
+Specify the database password.<br>
 Default value is 0nly4install
 
 #### `$db_password_hash`
 
-Specify the database password hash.
+Specify the database password hash.<br>
 Default value is \*31F96A5E321BF3E06E35668ED982CC2447CF5B3F
 
 #### `$client_password`
 
-Specify the client password.
+Specify the client password.<br>
 Default value is client-password-for-bacula
 
 #### `$monitor_password`
 
-Specify the monitor password.
+Specify the monitor password.<br>
 Default value is monitor-password-for-bacula
 
 #### `$storage_password`
 
-Specify the storage daemon password.
+Specify the storage daemon password.<br>
 Default value is storage-password-for-bacula
 
 #### `$storage_daemon`
 
-Specify the storage daemon that should be used.
+Specify the storage daemon that should be used.<br>
 Default value is storage-daemon.domain.local
 
 #### `$mail_hub`
 
-Specify the mail hub that should be used.
+Specify the mail hub that should be used.<br>
 Default value is mail-hub.domain.local
 
 #### `$mail_group`
 
-Specify the mail group that should be used.
+Specify the mail group that should be used.<br>
 Default value is bacula-list@domain.local
 
 #### `$backup_clients`
 
-Specify the clients that should be backuped.
+Specify the clients that should be backuped.<br>
 Default value is no client
 
 ## Limitations
 
-This module has been built on and tested against Puppet 4.0 and higher.
+This module has been built on and tested against Puppet 4.0 and higher.<br>
 The module has been tested on:
 
 * CentOS Linux 7
