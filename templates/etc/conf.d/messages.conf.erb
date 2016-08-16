@@ -8,7 +8,8 @@
 ### Reasonable message delivery -- send most everything to email address ###
 Messages {
   Name = Standard
-  mailcommand = "/usr/sbin/bsmtp -h <%= scope.lookupvar('bacula::mail_hub') %> -f \"\(Bacula\) \<bacula@<%= @fqdn %>\>\" -s \"Bacula: %t %e of %c %l\" %r"
+  #mailcommand = "/usr/sbin/bsmtp -h <%= scope.lookupvar('bacula::mail_hub') %> -f \"\(Bacula\) \<bacula@<%= @fqdn %>\>\" -s \"Bacula: %t %e of %c %l\" %r"
+  mailcommand = "/usr/sbin/bsmtp -h <%= scope.lookupvar('bacula::mail_hub') %> -f \"\(Bacula\) \<bacula@<%= @fqdn %>\>\" -s \"Bacula: %t %e of Client:%c Level:%l JobID:%i\" %r"
   operatorcommand = "/usr/sbin/bsmtp -h <%= scope.lookupvar('bacula::mail_hub') %> -f \"\(Bacula\) \<bacula@<%= @fqdn %>\>\" -s \"Bacula: Intervention needed for %j\" %r"
   mail = <%= scope.lookupvar('bacula::mail_group') %> = all, !skipped
   operator = <%= scope.lookupvar('bacula::mail_group') %> = mount
