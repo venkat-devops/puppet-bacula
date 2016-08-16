@@ -26,6 +26,7 @@ class bacula::params {
       $package_console                            = 'bacula-console'
 
       # Config definition
+      $config_log                                 = '/var/log/bacula/bacula.log'
       $config_file                                = '/etc/bacula/bacula-fd.conf'
       $config_file_template                       = 'bacula/etc/bacula-fd.conf.erb'
       $config_storage                             = '/etc/bacula/bacula-sd.conf'

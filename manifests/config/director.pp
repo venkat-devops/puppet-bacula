@@ -36,12 +36,12 @@ class bacula::config::director {
       notify  => Service[$bacula::params::service_director],
       require => Package[$bacula::params::package_director_common];
 
-      $bacula::params::config_bconsole:
-        ensure  => file,
-        mode    => '0644',
-        content => template($bacula::params::config_bconsole_template),
-        notify  => Service[$bacula::params::service_director],
-        require => Package[$bacula::params::package_director_common];
+    $bacula::params::config_bconsole:
+      ensure  => file,
+      mode    => '0644',
+      content => template($bacula::params::config_bconsole_template),
+      notify  => Service[$bacula::params::service_director],
+      require => Package[$bacula::params::package_director_common];
 
     $bacula::params::config_confd_catalog:
       ensure  => file,
@@ -131,6 +131,14 @@ class bacula::config::director {
       ensure  => file,
       mode    => '0644',
       content => template($bacula::params::config_confd_storage_template),
+      notify  => Service[$bacula::params::service_director],
+      require => Package[$bacula::params::package_director_common];
+
+    $bacula::params::config_log:
+      ensure  => file,
+      mode    => '0644',
+      owner   => 'bacula',
+      group   => 'bacula',
       notify  => Service[$bacula::params::service_director],
       require => Package[$bacula::params::package_director_common];
   }

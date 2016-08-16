@@ -12,7 +12,8 @@ Messages {
   operatorcommand = "/usr/sbin/bsmtp -h <%= scope.lookupvar('bacula::mail_hub') %> -f \"\(Bacula\) \<bacula@<%= @fqdn %>\>\" -s \"Bacula: Intervention needed for %j\" %r"
   mail = <%= scope.lookupvar('bacula::mail_group') %> = all, !skipped
   operator = <%= scope.lookupvar('bacula::mail_group') %> = mount
-  append = "/var/spool/bacula/log" = all, !skipped, !terminate
+  append = "/var/log/bacula/bacula.log" = all, !skipped, !terminate
+  console = all, !skipped, !saved
   syslog = all, !skipped
   catalog = all
 }
@@ -24,5 +25,5 @@ Messages {
   mailcommand = "/usr/sbin/bsmtp -h <%= scope.lookupvar('bacula::mail_hub') %> -f \"\(Bacula\) \<bacula@<%= @fqdn %>\>\" -s \"Bacula: %t %e of %c %l\" %r"
   mail = <%= scope.lookupvar('bacula::mail_group') %> = all, !skipped
   syslog = all, !skipped
-  append = "/var/log/bacula.log" = all, !skipped
+  append = "/var/log/bacula/bacula.log" = all, !skipped
 }
