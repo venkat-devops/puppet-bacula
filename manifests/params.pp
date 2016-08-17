@@ -38,6 +38,7 @@ class bacula::params {
       $config_confd_dir                           = '/etc/bacula/conf.d'
       $config_confd_clients_dir                   = '/etc/bacula/conf.d/clients'
       $config_confd_jobs_dir                      = '/etc/bacula/conf.d/jobs'
+      $config_confd_filesets_dir                  = '/etc/bacula/conf.d/filesets'
       $config_confd_catalog                       = '/etc/bacula/conf.d/catalog.conf'
       $config_confd_catalog_template              = 'bacula/etc/conf.d/catalog.conf.erb'
       $config_confd_client_director               = '/etc/bacula/conf.d/client-director.conf'

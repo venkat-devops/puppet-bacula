@@ -146,6 +146,9 @@ class bacula::config::director {
   # Create client configuration
   bacula::config::client { $bacula::backup_clients : }
 
+  # Create fileset configuration
+  bacula::config::fileset { $bacula::backup_clients : }
+
   # Set Bacula to Use MySQL Library - By default, Bacula is set to use the PostgreSQL library.
   exec { 'Set Bacula to Use MySQL Library':
   path    => ['/usr/bin', '/usr/sbin', '/bin'],
