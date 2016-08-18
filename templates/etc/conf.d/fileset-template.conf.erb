@@ -1,0 +1,33 @@
+### /etc/bacula/conf.d/fileset.conf
+#
+# Backup director fileset configuration file for Bacula
+#
+# managed by Puppet, local changes will be overwritten
+#
+
+### List of files to be backed up on the various systems ###
+FileSet {
+  Name = "<%= @name -%>"
+    <% [@includes].each do |item| -%>
+      Include {
+    <% item.fetch('options', []).each do |option| -%>
+        Options {
+    <% option.each do |key, values| -%>
+    <% [*values].each do |value| -%>
+          <%= key %> = <%= (/^\w+$/ =~ value) ? value : value.inspect -%>
+    <% end -%>
+    <% end -%>
+        }
+    <% end -%>
+    <% item.fetch('files').each do |file| -%>
+        File = <%= file.inspect -%>
+    <% end -%>
+      }
+    <% end -%>
+
+  Exclude {
+<% [@excludes].each do |file| -%>
+    File = <%= file.inspect -%>
+<% end -%>
+  }
+}

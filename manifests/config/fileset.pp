@@ -12,16 +12,16 @@
 #
 define bacula::config::fileset (
   $client_fqdn      = $title,
-  $fileset          = 'UnixServerComplete',
-  $file_retention   = '10 days',
-  $job_retention    = '30 days'
+  $name             = 'filesetname',
+  $includes         = ['/etc', '/var'],
+  $excludes         = ['/tmp', '/home/venkatp'],
   ) {
 
   # Define local variables for template
   $local_client_fqdn     = $client_fqdn
-  $local_fileset         = $fileset
-  $local_file_retention  = $file_retention
-  $local_job_retention   = $job_retention
+  $local_name            = $name
+  $local_includes        = $includes
+  $local_excludes        = $excludes
 
   # Create fileset defintion
   file { "${bacula::params::config_confd_filesets_dir}/${client_fqdn}.conf":

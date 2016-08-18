@@ -48,7 +48,7 @@ class bacula::params {
       $config_confd_director                      = '/etc/bacula/conf.d/director.conf'
       $config_confd_director_template             = 'bacula/etc/conf.d/director.conf.erb'
       $config_confd_fileset                       = '/etc/bacula/conf.d/fileset.conf'
-      $config_confd_fileset_template              = 'bacula/etc/conf.d/fileset.conf.erb'
+      #$config_confd_fileset_template              = 'bacula/etc/conf.d/fileset.conf.erb'
       $config_confd_job_backup_catalog            = '/etc/bacula/conf.d/job-backup-catalog.conf'
       $config_confd_job_backup_catalog_template   = 'bacula/etc/conf.d/job-backup-catalog.conf.erb'
       $config_confd_job_director                  = '/etc/bacula/conf.d/job-director.conf'
@@ -71,6 +71,7 @@ class bacula::params {
 
       $config_confd_client_template               = 'bacula/etc/conf.d/client-template.conf.erb'
       $config_confd_job_template                  = 'bacula/etc/conf.d/job-template.conf.erb'
+      $config_confd_fileset_template              = 'bacula/etc/conf.d/fileset-template.conf.erb'
 
       # Service definition
       $service_file                               = 'bacula-fd'

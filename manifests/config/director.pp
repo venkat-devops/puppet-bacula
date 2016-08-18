@@ -29,6 +29,11 @@ class bacula::config::director {
       mode   => '0755',
       path   => $bacula::params::config_confd_jobs_dir;
 
+    $bacula::params::config_confd_filesets_dir:
+      ensure => directory,
+      mode   => '0755',
+      path   => $bacula::params::config_confd_filesets_dir;
+
     $bacula::params::config_director:
       ensure  => file,
       mode    => '0644',
@@ -147,7 +152,7 @@ class bacula::config::director {
   bacula::config::client { $bacula::backup_clients : }
 
   # Create fileset configuration
-  bacula::config::fileset { $bacula::backup_clients : }
+  #bacula::config::fileset { $bacula::backup_clients : }
 
   # Set Bacula to Use MySQL Library - By default, Bacula is set to use the PostgreSQL library.
   exec { 'Set Bacula to Use MySQL Library':
